@@ -1,0 +1,79 @@
+package Att;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Week10 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://duckduckgo.com/");
+		Thread.sleep(2000);
+		WebElement Searchbar=driver.findElement(By.name("q"));
+		Searchbar.sendKeys("gmail login");
+		Thread.sleep(2000);
+		Searchbar.sendKeys(Keys.ENTER);
+		WebElement link=driver.findElement(By.xpath("//*[@id=\"r1-1\"]/div[3]/h2/a/span"));
+		link.click();
+		Thread.sleep(2000);
+		WebElement cacc=driver.findElement(By.xpath("//*[@id=\"yDmH0d\"]/c-wiz/main/div[3]/div/div[2]/div/div/div[1]/div/button/span"));
+		cacc.click();
+		WebElement fmpu=driver.findElement(By.xpath("//*[@id=\"yDmH0d\"]/c-wiz/main/div[3]/div/div[2]/div/div/div[2]/div/ul/li[1]/span[3]"));
+		fmpu.click();
+		WebElement fname=driver.findElement(By.xpath("//*[@id=\"firstName\"]"));
+		fname.sendKeys("vaishnavi");
+		fname.sendKeys(Keys.ENTER);
+		
+		Thread.sleep(2000);
+		WebElement lname=driver.findElement(By.xpath("//*[@id=\"lastName\"]"));
+		lname.sendKeys("mudhiraj");
+		lname.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		//WebElement d=driver.findElement(By.xpath("//*[@id=\"collectNameNext\"]/div/button/div[3]"));
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("month")).click();
+	
+		driver.findElement(By.xpath("//*[@id=\"month\"]/div/div[2]/ul/li[1]")).click();
+		Thread.sleep(2000);
+		WebElement day=driver.findElement(By.id("day"));
+		day.sendKeys("02");
+		Thread.sleep(1000);
+		WebElement year=driver.findElement(By.id("year"));
+		year.sendKeys("2007");
+		Thread.sleep(1000);
+		WebElement gender=driver.findElement(By.xpath("//*[@id=\"gender\"]/div/div[1]/div"));
+		gender.click();
+		Thread.sleep(1000);
+		WebElement female=driver.findElement(By.xpath("//*[@id=\"gender\"]/div/div[2]/ul/li[1]"));
+		female.click();
+		Thread.sleep(1000);
+		WebElement snext=driver.findElement(By.xpath("//*[@id=\"birthdaygenderNext\"]/div/button/span"));
+		snext.click();
+		Thread.sleep(1000);
+	WebElement snext1=driver.findElement(By.xpath("//div[normalize-space()='Create your own Gmail address']"));
+	snext1.click();
+	Thread.sleep(1000);
+		driver.findElement(By.name("Username")).sendKeys("vv7206422");
+		Thread.sleep(1000);
+		WebElement unext=driver.findElement(By.xpath("//*[@id=\"next\"]/div/button/span"));
+		unext.click();
+		Thread.sleep(1000);
+
+		WebElement pass=driver.findElement(By.name("Passwd"));
+		pass.sendKeys("Vyshu.02");
+		pass.click();
+		
+        WebElement cnfm=driver.findElement(By.name("PasswdAgain"));
+        cnfm.sendKeys("Vyshu.02");
+        cnfm.click();
+        
+        WebElement nxt=driver.findElement(By.xpath("//*[@id=\"createpasswordNext\"]/div/button/span"));
+        nxt.click();
+        Thread.sleep(1000);
+	}
+}
